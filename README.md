@@ -109,26 +109,6 @@ String literals count as many tokens as characters in the string. Whitespace, co
 - History heuristic learns from previous searches
 - Killer moves remember recent refutations
 
-## Algorithm Flow
-
-```
-Think()
-├── Initialize time control (1/30 of remaining time)
-├── Iterative deepening loop
-│   ├── Negamax(depth, alpha, beta)
-│   │   ├── Check transposition table
-│   │   ├── Evaluate if quiescence depth
-│   │   ├── Static pruning (null move, futility)
-│   │   ├── Generate and order moves
-│   │   ├── For each move:
-│   │   │   ├── Principal variation search
-│   │   │   ├── Late move reduction
-│   │   │   └── Update best move/alpha
-│   │   └── Store in transposition table
-│   └── Adjust aspiration window
-└── Return best move
-```
-
 ## Performance Characteristics
 
 **Depth Reached**: 8-12 ply typical, deeper in endgames  
